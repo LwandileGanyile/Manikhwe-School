@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <meta charset = "utf-8"></meta>
+        <meta http-equiv = "X-UA-Compatible" content = "IE=edge"></meta>
+        <meta name = "viewport" content = "width=device-width, initial-scale=1"></meta>
+        <link href = "bootstrap-4.3.1-dist/css/bootstrap.min.css" rel = "stylesheet"></link>
+	<link rel = "stylesheet" href = "style-sheets/login.css"></link>
+        <title>Login</title>
+    </h:head>
+    <h:body>
+        <div class = "container-fluid">
+            <!--The on hover css property i can't use, reason being i don't know how.-->
+            <div class = "row">
+		<div class = "col-md-12">
+		    <div>
+		        <ul id = "Header_Items">		
+		            <li class = "Header_Item"><a href = "index.xhtml" class = "Header_Link" target = "_blank">Home</a></li>
+		            <li class = "Header_Item"><a href = "Background.xhtml" class = "Header_Link" target = "_blank">Background</a></li>
+		            <li class = "Header_Item"><a href = "ContactInfo.xhtml" class = "Header_Link" target = "_blank">Contacts</a></li>
+		            <li class = "Header_Item"><a href = "About.xhtml" class = "Header_Link" target = "_blank">About</a></li>
+		            <li class = "Header_Item"><a href = "SignIn.xhtml" class = "Header_Link SignIn_Page_Link"  style = "float : right;background-color : blue;" 
+		            target = "_blank">SignIn</a></li>
+		            <li class = "Header_Item"><a href = "IntroToJava.xhtml" class = "Header_Link" target = "_blank">Java</a></li>
+		            <li class = "Header_Item"><a href = "#" class = "Header_Link" style = "color : white;" >Login</a></li>
+		        </ul>
+		    </div>
+		</div>
+            </div>
+            <div class = "row">
+		<div class = "col-md-12">
+                    <div id = "Form_Cover">
+                        <h:form id = "Form">
+                            <h:panelGrid columns="5">
+                                <h:outputLabel value="Email : " style="color:white"/>
+                                <h:inputText id="emailInputText" value="#{student.email}">
+                                
+                                </h:inputText>
+                                <h:outputLabel value="Password : " style="color:white"/>
+                                <h:inputSecret id="passswordInputSecret" value="#{student.password}">
+                                
+                                </h:inputSecret>
+                                <h:commandButton value="Login" action="#{student.processStudentLogin}"/>
+                                
+                                <h:outputLabel value="Not a member? " style="color:white"/>
+                                <h:commandLink value="SignIn" action="SignIn" style="color:lightsalmon"/>
+                            </h:panelGrid>
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>
+

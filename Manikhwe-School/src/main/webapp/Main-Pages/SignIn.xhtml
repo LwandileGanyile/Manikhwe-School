@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset = "utf-8"></meta>
+		<meta http-equiv = "X-UA-Compatible" content = "IE=edge"></meta>
+		<meta name = "viewport" content = "width=device-width, initial-scale=1"></meta>
+        <title>Sign In</title>
+        <link href = "bootstrap-4.3.1-dist/css/bootstrap.min.css" rel = "stylesheet"></link>
+		<link rel = "stylesheet" href = "style-sheets/signin.css"></link>
+        
+    </h:head>
+    <h:body>
+        <div class = "container-fluid">
+            <!--The on hover css property i can't use, reason being i don't know how.-->
+            <div class = "row">
+		<div class = "col-md-12">
+                    <div>
+                        <ul id = "Header_Items">		
+                            <li class = "Header_Item"><a href = "index.xhtml" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Home</a></li>
+                            <li class = "Header_Item"><a href = "Background.xhtml" class = "Header_Link" style = "text-decoration : none;"  target = "_blank">Background</a></li>
+                            <li class = "Header_Item"><a href = "ContactInfo.xhtml" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Contacts</a></li>
+                            <li class = "Header_Item"><a href = "About.xhtml" class = "Header_Link" style = "text-decoration : none;" target = "_blank">About</a></li>
+                            <li class = "Header_Item"><a href = "#" class = "Header_Link SignIn_Page_Link"  style = "float : right;background-color : blue; color : white;text-decoration : none;" >SignIn</a></li>
+                            <li class = "Header_Item"><a href = "IntroToJava.xhtml" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Java</a></li>
+                            <li class = "Header_Item"><a href = "Login.xhtml" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Login</a></li>
+                        </ul>
+                    </div>    
+                </div>
+            </div>
+            <div class ="row">
+                <div class ="col-md-4 offset-md-5">
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h:form id = "myform">
+                        <h:panelGrid columns="1">
+                            <h:outputLabel value="First Name" style="color:white;"/>
+                            <h:inputText id="firstNameInputText" value="#{student.firstName}"
+                                required="true" requiredMessage="First Name Is Required."
+                                validatorMessage="First Name Has To Have 1-20 Characters.">
+                                <f:validateLength minimum="1" maximum="20"/>
+                            </h:inputText>
+                            <h:message for="firstNameInputText" style="color:red; font-size: 22px; font-style: oblique;"/>
+                            
+                            <h:outputLabel value="Last Name" style="color:white;"/>
+                            <h:inputText id="lastNameInputText" value="#{student.lastName}"
+                             required="true" requiredMessage="Last Name Is Required."
+                                validatorMessage="Last Name Has To Have 1-20 Characters.">
+                                <f:validateLength minimum="1" maximum="20"/>
+                            </h:inputText>
+                            <h:message for="lastNameInputText" style="color:red; font-size: 22px; font-style: oblique;"/>
+                            
+                            <h:outputLabel value="Email" style="color:white;"/>
+                            <h:inputText id="emailInputText" value="#{student.email}"
+                                required="true" requiredMessage="Email Is Required."
+                                validatorMessage="You've Entered An Invalid Email.">
+                                <f:validateRegex pattern="^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,5})(.[a-z]{2,5})?$"/>
+                            </h:inputText>
+                            <h:message for="emailInputText" style="color:red; font-size: 22px; font-style: oblique;"/>
+                            
+                            <h:outputLabel value="Parent/Gardian Email" style="color:white;"/>
+                            <h:inputText id="gardianEmailInputText" value="#{student.guardianEmail}"
+                                required="true" requiredMessage="Someone To Talk To Regarding Your Progress Is Needed."
+                                validatorMessage="You've Entered An Invalid Email.">
+                                <f:validateRegex pattern="^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,5})(.[a-z]{2,5})?$"/>    
+                            </h:inputText>
+                            <h:message for="gardianEmailInputText" style="color:red; font-size: 22px; font-style: oblique;"/>
+                            
+                            <h:outputLabel value="Password" style="color:white;"/>
+                            <h:inputSecret id="passwordInputText" value="#{student.password}" 
+                                required="true" requiredMessage="Password Is Required."
+                                validatorMessage="Make Sure Password Has 5-15 Characters.">
+                                 <f:validateLength minimum="5" maximum="15" />
+                                 
+                            </h:inputSecret>
+                            <h:message for="passwordInputText" style="color:red; font-size: 22px; font-style: oblique;"/>
+                            
+                            <h:outputLabel value="Confirm Password" style="color:white;"/>
+                            <h:inputSecret id="confirmPasswordInputText" 
+                                required="true" requiredMessage="Confirm Password Is Required."
+                                validatorMessage="Make Sure Confirm Password Has 5-15 Characters.">
+                                <f:validateLength minimum="5" maximum="15" />
+                            </h:inputSecret>
+                            <h:message for="confirmPasswordInputText" style="color:red; font-size: 22px; font-style: oblique;"/>
+                        </h:panelGrid>
+                        
+                        <h:panelGrid columns="3">
+                            <h:outputLabel value="Courses : " style="color:white;"/>
+                            <h:selectManyCheckbox id="coursesCheckbox" value="#{student.courses}" style="color:white;">
+                                <f:selectItem itemValue="Java"/>
+                                <f:selectItem itemValue="C#" itemDisabled="true"/>
+                                <f:selectItem itemValue="Python" itemDisabled="true"/>
+                            </h:selectManyCheckbox>
+                        </h:panelGrid>
+                        
+                        <h:panelGrid columns="1">
+                            <h:commandButton value="Register" action="#{student.processStudentRegistration()}"/>
+                        </h:panelGrid>
+                    </h:form>    
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>
+

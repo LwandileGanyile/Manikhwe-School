@@ -1,0 +1,95 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.0.BUILD-SNAPSHOT'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+	id 'war'
+}
+
+group = 'com.manikhwe'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+}
+
+ext {
+	set('springCloudVersion', "Hoxton.BUILD-SNAPSHOT")
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-neo4j'
+	implementation 'org.springframework.boot:spring-boot-starter-groovy-templates'
+	implementation 'org.springframework.boot:spring-boot-starter-integration'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.cloud:spring-cloud-starter'
+	compileOnly 'org.projectlombok:lombok'
+	compile 'mysql:mysql-connector-java'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	
+	testImplementation 'org.springframework.integration:spring-integration-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+	
+		
+	// https://mvnrepository.com/artifact/org.hibernate/hibernate-gradle-plugin
+	compile group: 'org.hibernate', name: 'hibernate-gradle-plugin', version: '5.4.6.Final'
+	
+	// https://mvnrepository.com/artifact/org.glassfish/javax.faces
+	compile group: 'org.glassfish', name: 'javax.faces', version: '2.4.0'
+
+	// https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/javax.servlet.jsp.jstl-api
+	compile group: 'javax.servlet.jsp.jstl', name: 'javax.servlet.jsp.jstl-api', version: '1.2.2'
+	
+	 // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+	compile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+	
+	// https://mvnrepository.com/artifact/org.primefaces/primefaces
+	compile group: 'org.primefaces', name: 'primefaces', version: '7.0'
+	
+	// https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper
+	compile group: 'org.apache.tomcat', name: 'tomcat-jasper', version: '9.0.27'
+	
+	// https://mvnrepository.com/artifact/org.ocpsoft.rewrite/rewrite-servlet
+	compile group: 'org.ocpsoft.rewrite', name: 'rewrite-servlet', version: '3.4.2.Final'
+
+	// https://mvnrepository.com/artifact/org.ocpsoft.rewrite/rewrite-integration-faces
+	compile group: 'org.ocpsoft.rewrite', name: 'rewrite-integration-faces', version: '3.4.2.Final'
+	
+	
+	// https://mvnrepository.com/artifact/org.ocpsoft.rewrite/rewrite-config-prettyfaces
+	compile group: 'org.ocpsoft.rewrite', name: 'rewrite-config-prettyfaces', version: '3.4.2.Final'
+
+	
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-tomcat
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '2.2.1.RELEASE'
+	
+	// https://mvnrepository.com/artifact/javax.enterprise/cdi-api
+	providedCompile group: 'javax.enterprise', name: 'cdi-api', version: '2.0.SP1'
+	
+	
+}
+
+test {
+	useJUnitPlatform()
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}

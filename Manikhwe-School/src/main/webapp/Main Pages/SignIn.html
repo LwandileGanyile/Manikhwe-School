@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <meta charset = "utf-8"></meta>
+		<meta http-equiv = "X-UA-Compatible" content = "IE=edge"></meta>
+		<meta name = "viewport" content = "width=device-width, initial-scale=1"></meta>
+        <link href = "bootstrap-4.3.1-dist/css/bootstrap.min.css" rel = "stylesheet"></link>
+		<link rel = "stylesheet" href = "C:\Users\Test\OneDrive\Documents\My-God's-Path-On-Earth\Teaching Website\Manikhwe School\Manikhwe-School\src\main\webapp\style-sheets\signin.css"></link>
+        <title>Sign In</title>
+    </head>
+    <body>
+        <div class = "container-fluid">
+            <!--The on hover css property i can't use, reason being i don't know how.-->
+            <div class = "row">
+		<div class = "col-md-12">
+                    
+                        <div>
+                            <ul id = "Header_Items">		
+                                <li class = "Header_Item"><a href = "index.html" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Home</a></li>
+                                    <li class = "Header_Item"><a href = "Background.html" class = "Header_Link" style = "text-decoration : none;"  target = "_blank">Background</a></li>
+                                    <li class = "Header_Item"><a href = "Contact_Info.html" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Contacts</a></li>
+                                    <li class = "Header_Item"><a href = "About.html" class = "Header_Link" style = "text-decoration : none;" target = "_blank">About</a></li>
+                                    <li class = "Header_Item"><a href = "#" class = "Header_Link SignIn_Page_Link"  style = "float : right;background-color : blue; color : white;text-decoration : none;" >SignIn</a></li>
+                                    <li class = "Header_Item"><a href = "Intro_To_Java.html" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Java</a></li>
+                                    <li class = "Header_Item"><a href = "Login.html" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Login</a></li>
+                            </ul>
+                        </div>
+                    
+                </div>
+            </div>
+            <div class = "row">
+		<div class = "col-md-12">
+                    <div id = "Form_Cover">
+                        <div id = "Form">
+                            <form action="StudentController.java" method = "get">
+                                <fieldset>
+                                    <legend>Become A Member</legend>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <label for = "firstname">First Name :</label> 
+                                                <br/>
+                                                <input type = "text" name = "firstname" maxlength = "20" required = "required"></input>					
+                                            </td>
+                                            <td></td>
+                                            <td>
+                                                <label for = "lastname">Last Name :</label>
+                                                <br/>
+                                                <input type = "text" name = "lastname" maxlength = "20" required = "required"></input>						
+                                            </td>			
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <label for = "guardianemail">Parent\Guardian Email :</label>
+                                                <br/>
+                                                <input type = "email" name = "guardianemail" placeholder = "Someone who might donate for you." maxlength = "30" required = "required"></input>						
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <label for = "email">Email :</label>
+                                                <br/>
+                                                <input type = "email" name = "email" maxlength = "30" required = "required"></input>						
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for = "password">Password :</label>
+                                                <br/>
+                                                <input type = "password" name = "password" maxlength = "20" required = "required"></input>						
+                                            </td>
+                                            <td></td>
+                                            <td>
+                                                <label for = "confirmpassword">Confirm Password :</label>
+                                                <br/>
+                                                <input type = "password" name = "confirmpassword" maxlength = "20" required = "required"></input>					
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label>
+                                                    <input type = "checkbox" name = "suscribe" value = "Suscribe" checked = "checked"></input>
+                                                    Sign me up for email updates
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label></label>
+                                            </td>
+                                            <td>
+                                                <label>
+                                                    <input type = "submit" name = "submitbutton" value = "Submit"></input>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>	
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,115 @@
+@charset "ISO-8859-1";
+body{
+	
+	background-color : hsl(50, 70%, 90% );
+	color : hsl(250, 30%, 30% );
+	margin : 0px;
+}
+
+.slide-container{
+	width : 275px;
+	height : 183px;
+}
+
+.image-container{
+	width : 825px;
+	height : 183px;
+	position : relative;
+	transition : left 2s;
+	-webkit-transition : left 2s;
+	-moz-transition : left 2s;
+	-o-transition : left 2s;
+}
+
+.area{
+	background-color : silver;
+	text-align : center;
+	font-size : large;
+	min-height : 90vh;
+}
+
+#main-area{
+    background-color : brown;
+    min-height : 90vh;
+    border : 2px solid hsl(250, 30%, 30% );
+    animation-name : Play_Coders;
+    animation-duration : 136s;
+}
+
+@keyframes Play_Coders{
+	0%{background-image : url(1.jpg);}
+	3%{background-image : url(2.jpg);}
+	6%{background-image : url(3.jpg);}
+	9%{background-image : url(4.jpg);}
+	12%{background-image : url(5.jpg);}
+	15%{background-image : url(6.jpg);}
+	18%{background-image : url(7.png);}
+	21%{background-image : url(8.jpg);}
+	24%{background-image : url(9.jpg);}
+	27%{background-image : url(10.jpg);}
+	30%{background-image : url(11.jpg);}
+	33%{background-image : url(12.jpg);}
+	36%{background-image : url(13.jpg);}
+	39%{background-image : url(14.jpg);}
+	42%{background-image : url(15.jpg);}
+	45%{background-image : url(16.jpg);}
+	48%{background-image : url(17.jpg);}
+	51%{background-image : url(18.jpg);}
+	54%{background-image : url(19.jpg);}
+	57%{background-image : url(20.jpg);}
+	60%{background-image : url(21.jpg);}
+	63%{background-image : url(22.png);}
+	66%{background-image : url(23.jpg);}
+	69%{background-image : url(24.jpg);}
+	72%{background-image : url(25.jpg);}
+	75%{background-image : url(26.jpg);}
+	78%{background-image : url(27.jpg);}
+	81%{background-image : url(28.jpg);}
+	84%{background-image : url(29.jpg);}
+	87%{background-image : url(30.jpg);}
+	90%{background-image : url(31.jpg);}
+	93%{background-image : url(32.png);}
+	96%{background-image : url(33.jpg);}
+	99%{background-image : url(34.jpg);}
+}
+
+#Header_Items{
+	list-style-type : none;
+	margin : 0px;
+	padding : 20px 0px;
+	background : hsl(250, 30%, 30% );
+	overflow : hidden;
+}
+
+.Header_Item{
+	display : inline;
+	font-size : 20px;
+	margin : 0px;
+		
+}
+.Header_Link{
+	text-decoration : none;
+	text-align : center;
+	
+	margin : 0px;
+	padding : 5px 3%;
+	color : white;
+}
+.Header_Link:hover:not(#Active_Page_Link):not(#SignIn_Page_Link){
+	color : blue;
+	text-decoration : none;
+}
+
+#SignIn_Page_Link{
+	float : right;
+	background-color : blue;
+}
+#SignIn_Page_Link:hover{
+	color : hsl(250, 30%, 30% );
+}
+
+<!--I donot know how to replace this with an inline style-->
+#Active_Page_Link:hover{
+	color : white;
+	text-decoration : none;
+}
